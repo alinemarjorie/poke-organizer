@@ -62,3 +62,21 @@ function showFullPokemon(detailsPokemon) {
 ).join('')
 }
 `}
+
+const AZButton = document.getElementById("aToZ");
+const ZAButton = document.getElement.By.Id("zToA");
+
+AZButton.addEventListener ("click",orderAZ);
+
+function orderAZ() {
+    POKEMON.pokemon.sort(a,b =>
+    if (a.name > b.name) {
+    return 1
+    }
+    if (a.name < b.name) {
+    return -1
+    }
+    return 0
+)
+return showPokemons();
+}
