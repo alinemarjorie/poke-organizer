@@ -1,8 +1,12 @@
-const selectTypeElement = document.getElementById("select-type");
+function showPercent(filteredPokemon) {
+    let number = filteredPokemon.length / 151 * 100;
+    document.getElementById("math-pokemons").innerHTML =
+        `<div class="math"> ${Math.round(number)}% 
+    </div>
+`
+}
 
-selectTypeElement.addEventListener("change", typeFilter);
-
-function showPokemons(filteredPokemon){
+function showPokemons(filteredPokemon) {
     document.getElementById("pokemons").innerHTML = `${filteredPokemon.map(pokemon => `
         <div class="each-pokemon">
         <img src="${pokemon.img}" class="pokemon-img"/>
@@ -13,30 +17,36 @@ function showPokemons(filteredPokemon){
     `
     ).join('')
  }
-`}
+`
+}
 
-function typeFilter(){
+const selectTypeElement = document.getElementById("select-type");
+selectTypeElement.addEventListener("change", typeFilter);
+
+function typeFilter() {
     let filteredPokemon = POKEMON.pokemon.filter(pokemon => {
-    return (pokemon.type.includes(selectTypeElement.value));
-});
+        return (pokemon.type.includes(selectTypeElement.value));
+    });
+    showPercent(filteredPokemon);
     showPokemons(filteredPokemon);
 }
-  
+
 const selectWeaknessesElement = document.getElementById("select-weaknesses");
 selectWeaknessesElement.addEventListener("change", weaknessesFilter);
 
-function weaknessesFilter(){
+function weaknessesFilter() {
     let filteredPokemon = POKEMON.pokemon.filter(pokemon => {
         return (pokemon.weaknesses.includes(selectWeaknessesElement.value));
     })
+    showPercent(filteredPokemon);
     showPokemons(filteredPokemon);
 }
 
 const pokeSearchElement = document.getElementById("poke-search");
 pokeSearchElement.addEventListener("keyup", pokemonSearch);
 
-function pokemonSearch() { 
-    let searchUpper = pokeSearchElement.value.toUpperCase();    
+function pokemonSearch() {
+    let searchUpper = pokeSearchElement.value.toUpperCase();
     let detailsPokemon = POKEMON.pokemon.filter(pokemon => {
         let nameUpper = pokemon.name.toUpperCase();
         return (nameUpper.includes(searchUpper));
@@ -61,22 +71,5 @@ function showFullPokemon(detailsPokemon) {
 `
 ).join('')
 }
-`}
-
-const AZButton = document.getElementById("aToZ");
-const ZAButton = document.getElement.By.Id("zToA");
-
-AZButton.addEventListener ("click",orderAZ);
-
-function orderAZ() {
-    POKEMON.pokemon.sort(a,b =>
-    if (a.name > b.name) {
-    return 1
-    }
-    if (a.name < b.name) {
-    return -1
-    }
-    return 0
-)
-return showPokemons();
+`
 }
