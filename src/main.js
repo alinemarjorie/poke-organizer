@@ -67,16 +67,6 @@ function pokemonSearch() {
     document.getElementById("math-pokemons").style.display = "none";
 }
 
-function getPokemonOnClick() {
-    let pokemonList = document.querySelectorAll('.pokemon-img');
-
-    for (let pokemon of pokemonList) {
-        pokemon.addEventListener('click', function (event) {
-            console.log("ae")
-        })
-    }
-}
-
 const AZButton = document.getElementById("aToZ");
 AZButton.addEventListener("click", orderAZ);
 
@@ -93,23 +83,69 @@ function orderAZ() {
     showPokemons();
 }
 
-// Modal:
-// function showFullPokemon(detailsPokemon) {
-//     document.getElementById("pokemons").innerHTML = `${detailsPokemon.map(pokemon => `
-//     <div class="each-full-pokemon">
-//     <img src="${pokemon.img}" class="pokemon-img"/>
-//     <div class="text-name">
-//         <h3 class="pokemon-number">${pokemon.num}</h3>
-//         <h3 class="pokemon-name">${pokemon.name}</h3>
-//         <p><strong>Tipo:</strong> ${pokemon.type}</p>
-//         <p><strong>Fraquezas:</strong> ${pokemon.weaknesses}</p>
-//         <p><strong>Horário:</strong> ${pokemon.spawn_time}</p>     
-//         <p><strong>Altura:</strong> ${pokemon.height}</p>
-//         <p><strong>Peso:</strong> ${pokemon.weight}</p>
-//     </div>
-//     </div>
-// `
-// ).join('')
+const ZAButton = document.getElementById("ztoA");
+ZAButton.addEventListener("click", orderZA);
+
+function orderZA(){
+    pokemons = pokemons.sort((a, b) => {
+        if (a.name < b.name) {
+            return 1;
+        }
+        if (a.name > b.name) {
+            return -1;
+        }
+        return 0;
+    });
+    showPokemons();
+}
+
+// let pokemonList = document.querySelectorAll('.each-pokemon');
+
+// const modal = document.getElementById("my-modal");
+// const close = document.getElementById("close");
+
+// function getPokemonOnClick() {
+//     for (let pokemon of pokemonList) {
+//         pokemon.addEventListener("click", function (event){
+//                 console.log("ae");
+//         })  
+//     }
 // }
-// `
+
+// function modalPokemon(){
+//     modal.style.display = "block";
 // }
+
+// console.log(getPokemonOnClick());
+
+// // close.onclick = function(){
+// //     modal.style.display = "none";
+// // }
+
+// // window.onclick = function(event){
+// //     if (event.target == modal) {
+// //         modal.style.display = "none";
+// //     }
+// // }
+
+
+// // Modal:
+// // function showFullPokemon(detailsPokemon) {
+// //     document.getElementById("pokemons").innerHTML = `${detailsPokemon.map(pokemon => `
+// //     <div class="each-full-pokemon">
+// //     <img src="${pokemon.img}" class="pokemon-img"/>
+// //     <div class="text-name">
+// //         <h3 class="pokemon-number">${pokemon.num}</h3>
+// //         <h3 class="pokemon-name">${pokemon.name}</h3>
+// //         <p><strong>Tipo:</strong> ${pokemon.type}</p>
+// //         <p><strong>Fraquezas:</strong> ${pokemon.weaknesses}</p>
+// //         <p><strong>Horário:</strong> ${pokemon.spawn_time}</p>     
+// //         <p><strong>Altura:</strong> ${pokemon.height}</p>
+// //         <p><strong>Peso:</strong> ${pokemon.weight}</p>
+// //     </div>
+// //     </div>
+// // `
+// // ).join('')
+// // }
+// // `
+// // }
