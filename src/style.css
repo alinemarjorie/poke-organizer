@@ -22,5 +22,10 @@ display: flex;
 flex-wrap: wrap;
 }
 
+.pokemon-img:hover {
+    cursor: pointer;
+}
+
+
 
 

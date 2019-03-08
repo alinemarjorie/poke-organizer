@@ -9,7 +9,7 @@
     <div class="container">
       <div class="type-filter">
         <select id="select-type">
-          <option disabled selected>Escolha o tipo</option>
+          <option value="" disabled selected>Escolha o tipo</option>
           <option value="Water">Água</option>
           <option value="Dragon">Dragão</option>
           <option value="Electric">Elétrico</option>
@@ -29,7 +29,7 @@
       </div>
       <div class="weaknesses-filter">
         <select id="select-weaknesses">
-          <option disabled selected>Escolha a fraqueza</option>
+          <option value="" disabled selected>Escolha a fraqueza</option>
           <option value="Water">Água</option>
           <option value="Dragon">Dragão</option>
           <option value="Electric">Elétrico</option>
@@ -67,6 +67,9 @@
           <option value="">20:01 - 22:00</option>
           <option value="">22:01 - 23:59</option>
         </select>    
+      </div>
+      <div>
+        <button id="filter">Filtrar</button>
       </div>
       <div class="details">
         <input type="text" id="poke-search" placeholder="Digite o nome do Pokemon">
