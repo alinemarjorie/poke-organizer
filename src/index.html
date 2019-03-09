@@ -7,55 +7,62 @@
   </head>
   <body>
     <div class="container">
-      <div class="type-filter">
-        <select id="select-type">
-          <option value="" disabled selected>Escolha o tipo</option>
-          <option value="Water">Água</option>
-          <option value="Dragon">Dragão</option>
-          <option value="Electric">Elétrico</option>
-          <option value="Ghost">Fantasma</option>
-          <option value="Fire">Fogo</option>
-          <option value="Ice">Gelo</option>
-          <option value="Grass">Grama</option>
-          <option value="Bug">Inseto</option>
-          <option value="Fighting">Lutador</option>
-          <option value="Normal">Normal</option>
-          <option value="Rock">Pedra</option>
-          <option value="Psychic">Psíquico</option>
-          <option value="Ground">Terrestre</option>
-          <option value="Poison">Veneno</option>
-          <option value="Flying">Voador</option>
-        </select>
+      <header>
+          <img src="https://fontmeme.com/permalink/190309/c3d1cb12a673e31c720b738fe8ea658e.png" alt="fonte-de-pokemon-go" border="0"></a>          
+      </header>
+      <div class="options">
+        <div class="details">
+          <input type="text" id="poke-search" placeholder="Digite o nome do Pokemon">
+        </div>
       </div>
-      <div class="weaknesses-filter">
-        <select id="select-weaknesses">
-          <option value="" disabled selected>Escolha a fraqueza</option>
-          <option value="Water">Água</option>
-          <option value="Dragon">Dragão</option>
-          <option value="Electric">Elétrico</option>
-          <option value="Ghost">Fantasma</option>
-          <option value="Fire">Fogo</option>
-          <option value="Ice">Gelo</option>
-          <option value="Grass">Grama</option>
-          <option value="Bug">Inseto</option>
-          <option value="Fighting">Lutador</option>
-          <option value="Steel">Metal</option>
-          <option value="Normal">Normal</option>
-          <option value="Rock">Pedra</option>
-          <option value="Psychic">Psíquico</option>
-          <option value="Ground">Terrestre</option>
-          <option value="Poison">Veneno</option>
-          <option value="Flying">Voador</option>
-          <option value="Dark">Noturno</option>
-          <option value="Fairy">Fada</option>
+      <div class="search">
+        <div class="type-filter">
+          <select id="select-type">
+            <option value="" disabled selected>Escolha o tipo</option>
+            <option value="Water">Água</option>
+            <option value="Dragon">Dragão</option>
+            <option value="Electric">Elétrico</option>
+            <option value="Ghost">Fantasma</option>
+            <option value="Fire">Fogo</option>
+            <option value="Ice">Gelo</option>
+            <option value="Grass">Grama</option>
+            <option value="Bug">Inseto</option>
+            <option value="Fighting">Lutador</option>
+            <option value="Normal">Normal</option>
+            <option value="Rock">Pedra</option>
+            <option value="Psychic">Psíquico</option>
+            <option value="Ground">Terrestre</option>
+            <option value="Poison">Veneno</option>
+            <option value="Flying">Voador</option>
+          </select>
+        </div>
+          <div class="weaknesses-filter">
+          <select id="select-weaknesses">
+            <option value="" disabled selected>Escolha a fraqueza</option>
+            <option value="Water">Água</option>
+            <option value="Dragon">Dragão</option>
+            <option value="Electric">Elétrico</option>
+            <option value="Ghost">Fantasma</option>
+            <option value="Fire">Fogo</option>
+            <option value="Ice">Gelo</option>
+            <option value="Grass">Grama</option>
+            <option value="Bug">Inseto</option>
+            <option value="Fighting">Lutador</option>
+            <option value="Steel">Metal</option>
+            <option value="Normal">Normal</option>
+            <option value="Rock">Pedra</option>
+            <option value="Psychic">Psíquico</option>
+            <option value="Ground">Terrestre</option>
+            <option value="Poison">Veneno</option>
+            <option value="Flying">Voador</option>
+            <option value="Dark">Noturno</option>
+            <option value="Fairy">Fada</option>
 
-        </select>
-      </div>
-      <div>
-        <button id="filter">Filtrar</button>
-      </div>
-      <div class="details">
-        <input type="text" id="poke-search" placeholder="Digite o nome do Pokemon">
+          </select>
+        </div>
+        <div>
+          <button id="filter">Filtrar</button>
+        </div>
       </div>
     </div>
     <div class="order">
@@ -63,7 +70,7 @@
         <button id="aToZ">Ordenar A-Z</button>
       </div>
       <div class="alpha-end">
-        <button id="ztoA">Ordenar Z-A</button>      
+        <button id="zToA">Ordenar Z-A</button>      
       </div>  
     </div>
       <section id="math-pokemons"></section>
@@ -71,7 +78,7 @@
     <div id="my-modal" class="modal">
       <div class="modal-content">
         <span id="close">&times;</span>
-        <p>Oi ALine</p>
+        <p id=contentModal></p>
       </div>
     </div>
     <script src="./data/pokemon/pokemon.js"></script>

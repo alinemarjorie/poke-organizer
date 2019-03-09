@@ -50,8 +50,8 @@ function callFilter() {
 }
 
 function resetSelectElement() {
-    selectTypeElement.selectedIndex = 0; 
-    selectWeaknessesElement.selectedIndex = 0; 
+    selectTypeElement.selectedIndex = 0;
+    selectWeaknessesElement.selectedIndex = 0;
 }
 
 const pokeSearchElement = document.getElementById("poke-search");
@@ -70,15 +70,44 @@ function pokemonSearch() {
 function getPokemonOnClick() {
     let pokemonList = document.querySelectorAll('.pokemon-img');
 
-    for (let pokemonName of pokemonList) {
-        pokemonName.addEventListener('click', function() {
-            console.log()
-            pokemons = POKEMON.pokemon.filter(pokemon => {
-                return (pokemon.name.includes(pokemonName.textContent));
-            })
-            const nome = pokemonName.dataset.name;
+    for (let pokemonImg of pokemonList) {
+        pokemonImg.addEventListener('click', function () {
+            const nome = pokemonImg.dataset.name;
             showFullPokemon(nome);
         })
+    }
+}
+
+const modal = document.getElementById("my-modal");
+
+function showFullPokemon(nome) {
+    modal.style.display = "block";
+    const onePokemon = POKEMON.pokemon.find(pokemon => pokemon.name === nome)
+    document.getElementById("contentModal").innerHTML = `
+    <div class="each-full-pokemon">
+    <img src="${onePokemon.img}" class="pokemon-img"/>
+    <div class="text-name">
+        <h3 class="pokemon-number">${onePokemon.num}</h3>
+        <h3 class="pokemon-name">${onePokemon.name}</h3>
+        <p><strong>Tipo:</strong> ${onePokemon.type}</p>
+        <p><strong>Fraquezas:</strong> ${onePokemon.weaknesses}</p>
+        <p><strong>Período:</strong> ${onePokemon.spawn_time}</p>     
+        <p><strong>Altura:</strong> ${onePokemon.height}</p>
+        <p><strong>Peso:</strong> ${onePokemon.weight}</p>        
+    </div>
+    </div>
+    `
+}
+
+const close = document.getElementById("close");
+
+close.onclick = function () {
+    modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
 }
 
@@ -98,40 +127,18 @@ function orderAZ() {
     showPokemons();
 }
 
-// Modal:
-function showFullPokemon(nome) {
-    console.log(nome)
-    const pokemonAchei = POKEMON.pokemon.find(pokemon => pokemon.name === nome)
-    console.log(pokemonAchei)
-    document.getElementById("pokemons").innerHTML = `
-    <div class="each-full-pokemon">
-    <img src="${pokemonAchei.img}" class="pokemon-img"/>
-    <div class="text-name">
-        <h3 class="pokemon-number">${pokemonAchei.num}</h3>
-        <h3 class="pokemon-name">${pokemonAchei.name}</h3>
-        <p><strong>Tipo:</strong> ${pokemonAchei.type}</p>
-        <p><strong>Fraquezas:</strong> ${pokemonAchei.weaknesses}</p>
-        <p><strong>Horário:</strong> ${pokemonAchei.spawn_time}</p>     
-        <p><strong>Altura:</strong> ${pokemonAchei.height}</p>
-        <p><strong>Peso:</strong> ${pokemonAchei.weight}</p>        
-    </div>
-    </div>
-    `
+const ZAButton = document.getElementById("zToA");
+ZAButton.addEventListener("click", orderZA);
+
+function orderZA() {
+    pokemons = pokemons.sort((a, b) => {
+        if (a.name < b.name) {
+            return 1;
+        }
+        if (a.name > b.name) {
+            return -1;
+        }
+        return 0;
+    });
+    showPokemons();
 }
-
-// const modal = document.getElementById("my-modal");
-// const close = document.getElementById("close");
-
-// function modalPokemon(){
-//     modal.style.display = "block";
-// }
-
-// // close.onclick = function(){
-// //     modal.style.display = "none";
-// // }
-
-// // window.onclick = function(event){
-// //     if (event.target == modal) {
-// //         modal.style.display = "none";
-// //     }
-// // }
