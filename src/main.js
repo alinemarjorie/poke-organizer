@@ -20,7 +20,7 @@ function showPokemons() {
 function showPercent() {
     let number = pokemons.length / 151 * 100;
     document.getElementById("math-pokemons").innerHTML =
-        `<div class="math"> ${Math.round(number)}% 
+        `<div class="math"> Corresponde a ${Math.round(number)}% dos Pokémons.
     </div>
 `
 }
@@ -142,3 +142,4 @@ function orderZA() {
     });
     showPokemons();
 }
+

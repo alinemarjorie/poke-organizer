@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
   </head>
   <body>
     <div class="container">
       <header>
-          <img src="https://fontmeme.com/permalink/190309/c3d1cb12a673e31c720b738fe8ea658e.png" alt="fonte-de-pokemon-go" border="0"></a>          
+        <img id="title" src="PokeOrganizer.png" alt="PokéOrganizer - O seu organizador de Pokémon">         
       </header>
       <div class="options">
         <div class="details">
@@ -57,30 +58,30 @@
             <option value="Flying">Voador</option>
             <option value="Dark">Noturno</option>
             <option value="Fairy">Fada</option>
-
           </select>
         </div>
         <div>
           <button id="filter">Filtrar</button>
         </div>
+        <div class="order">
+          <div class="alpha-start">
+            <button id="aToZ">Ordenar A-Z</button>
+          </div>
+          <div class="alpha-end">
+            <button id="zToA">Ordenar Z-A</button>      
+          </div>  
+        </div>
       </div>
     </div>
-    <div class="order">
-      <div class="alpha-start">
-        <button id="aToZ">Ordenar A-Z</button>
-      </div>
-      <div class="alpha-end">
-        <button id="zToA">Ordenar Z-A</button>      
-      </div>  
-    </div>
-      <section id="math-pokemons"></section>
-      <section id="pokemons" class="show-pokemons"></section>
+    <section id="math-pokemons"></section>
+    <section id="pokemons" class="show-pokemons"></section>
     <div id="my-modal" class="modal">
       <div class="modal-content">
         <span id="close">&times;</span>
         <p id=contentModal></p>
       </div>
     </div>
+    <footer>Desenvolvido por Aline Marjorie e Jessica Veridiana</footer>
     <script src="./data/pokemon/pokemon.js"></script>
     <script src="main.js"></script>
   </body>

@@ -5,21 +5,50 @@
     border: 0; */
 }
 
+body {
+    background: url(clouds1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0;
+    
+  }
+
 header {
     display: flex;
     justify-content: center;
 }
 
+#title{
+    height: 130px;
+}
+
 .search {
     display: flex;
     justify-content: space-evenly;
-    margin: 10px;
+    background: url(pikachu.jpg);
+    width: 700px;
+    padding: 10px;
+    border: 3px solid #4CBDFE;
+    margin-left: 300px; 
+    border-radius: 8px;
 }
 
 .details {
     display: flex;
     justify-content: center;
     margin: 5px;
+    padding: 20px;
+}
+
+input{
+    border: 3px solid #00B4CC;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    outline: none;
+    color: #9DBFAF;
+    opacity: 0.6;
+    color: black;
 }
 
 .order {
@@ -29,8 +58,11 @@ header {
 }
 
 .show-pokemons {
-display: flex;
-flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    font-family: 'Acme', sans-serif;
+    text-align: center;
 }
 
 .pokemon-img:hover {
@@ -50,9 +82,10 @@ flex-wrap: wrap;
 }
 
 .modal-content {
-    background-color: white;
+    background: url(ash2.jpg);
+    font-family: Arial, Helvetica, sans-serif;
     margin: 15% auto; 
-    padding: 20px;
+    padding: 0px;
     border: 1px solid #888;
     max-width: 50%;
     display: flex;
@@ -73,3 +106,29 @@ flex-wrap: wrap;
     color: black;
     cursor: pointer;
 }
+
+#math-pokemons{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    width: 300px;
+    border-radius: 10px;
+    margin-left: 500px;
+    margin-top: 15px;
+}
+
+footer{ 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    width: 17px;
+    text-align: center;
+    padding-bottom: 0px;
+    margin-bottom: 0;
+    bottom: 0;
+    position: static;
+    width: 100%;
+    clear: both;
+    opacity: 0.4;
+}
+
