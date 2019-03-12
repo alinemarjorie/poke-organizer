@@ -1,12 +1,10 @@
 * {     
     margin-top: 0;
     padding: 0;
-    /* box-sizing: border-box;
-    border: 0; */
 }
 
 body {
-    background: url(clouds1.jpg);
+    background: url(medias/clouds1.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     margin: 0;
@@ -25,7 +23,7 @@ header {
 .search {
     display: flex;
     justify-content: space-evenly;
-    background: url(pikachu.jpg);
+    background: url(medias/pikachu.jpg);
     width: 700px;
     padding: 10px;
     border: 3px solid #4CBDFE;
@@ -82,7 +80,7 @@ input{
 }
 
 .modal-content {
-    background: url(ash2.jpg);
+    background: url(medias/ash2.jpg);
     font-family: Arial, Helvetica, sans-serif;
     margin: 15% auto; 
     padding: 0px;
