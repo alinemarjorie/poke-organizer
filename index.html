@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <title>PokeOrganizer</title>
     <link rel="stylesheet" href="src/style.css"/>
     <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
   </head>
@@ -12,13 +12,13 @@
         <img id="title" src="src/medias/logo.png" alt="PokéOrganizer - O seu organizador de Pokémon">         
       </header>
       <div class="options">
-        <div class="details">
-          <input type="text" id="poke-search" placeholder="Digite o nome do Pokemon">
+         <div class="details">
+          <input type="text" id="poke-search" placeholder="Digite o nome do Pokemon aqui ou utilize os filtros">
         </div>
       </div>
       <div class="search">
-        <div class="type-filter">
-          <select id="select-type">
+        <div>
+          <select id="select-type" class="selects">
             <option value="" disabled selected>Escolha o tipo</option>
             <option value="Water">Água</option>
             <option value="Dragon">Dragão</option>
@@ -37,8 +37,8 @@
             <option value="Flying">Voador</option>
           </select>
         </div>
-          <div class="weaknesses-filter">
-          <select id="select-weaknesses">
+          <div>
+          <select id="select-weaknesses" class="selects">
             <option value="" disabled selected>Escolha a fraqueza</option>
             <option value="Water">Água</option>
             <option value="Dragon">Dragão</option>
@@ -60,21 +60,20 @@
             <option value="Fairy">Fada</option>
           </select>
         </div>
-        <div>
-          <button id="filter">Filtrar</button>
+          <button id="filter" class="buttons-filter" disabled>Filtrar!</button>
+          <button id="showAll" class="buttons-filter">Todos</button>
+      </div>
+      <div class="order">
+        <div class="alpha-start">
+          <button id="aToZ" class="order-button">Ordenar A-Z</button>
         </div>
-        <div class="order">
-          <div class="alpha-start">
-            <button id="aToZ">Ordenar A-Z</button>
-          </div>
-          <div class="alpha-end">
-            <button id="zToA">Ordenar Z-A</button>      
-          </div>  
-        </div>
+        <div class="alpha-end">
+          <button id="zToA" class="order-button">Ordenar Z-A</button>      
+        </div>  
       </div>
     </div>
     <section id="math-pokemons"></section>
-    <section id="pokemons" class="show-pokemons"></section>
+    <ul id="pokemons" class="show-pokemons"></ul>
     <div id="my-modal" class="modal">
       <div class="modal-content">
         <span id="close">&times;</span>

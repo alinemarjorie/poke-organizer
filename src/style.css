@@ -1,6 +1,7 @@
 * {     
     margin-top: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -8,8 +9,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     margin: 0;
-    
-  }
+}
 
 header {
     display: flex;
@@ -17,7 +17,19 @@ header {
 }
 
 #title{
-    height: 130px;
+    height: 110px;
+}
+
+input{
+    border: 3px solid #00B4CC;
+    padding: 5px;
+    height: 20px;
+    width: 350px;
+    border-radius: 5px;
+    outline: none;
+    color: #9DBFAF;
+    opacity: 0.6;
+    color: black;
 }
 
 .search {
@@ -27,7 +39,7 @@ header {
     width: 700px;
     padding: 10px;
     border: 3px solid #4CBDFE;
-    margin-left: 300px; 
+    margin-left: 25%; 
     border-radius: 8px;
 }
 
@@ -38,29 +50,34 @@ header {
     padding: 20px;
 }
 
-input{
-    border: 3px solid #00B4CC;
-    padding: 5px;
-    height: 20px;
-    border-radius: 5px;
-    outline: none;
-    color: #9DBFAF;
-    opacity: 0.6;
-    color: black;
-}
-
 .order {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
 
+.order-button {
+    padding: 5px;
+    background-color: #9b9494;
+    font-weight: 300;
+    color: #fff;
+    border: 0;
+    margin: 2px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
 .show-pokemons {
     display: flex;
     flex-wrap: wrap;
-    margin: 10px;
-    font-family: 'Acme', sans-serif;
+    margin: 20px;
     text-align: center;
+    justify-content: center;
+}
+
+.pokemon-name {
+    font-family: 'Acme', sans-serif;  
+    font-size: 20px;
 }
 
 .pokemon-img:hover {
@@ -81,7 +98,6 @@ input{
 
 .modal-content {
     background: url(medias/ash2.jpg);
-    font-family: Arial, Helvetica, sans-serif;
     margin: 15% auto; 
     padding: 0px;
     border: 1px solid #888;
@@ -107,7 +123,6 @@ input{
 
 #math-pokemons{
     color: black;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     text-align: center;
     width: 300px;
@@ -117,7 +132,6 @@ input{
 }
 
 footer{ 
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     width: 17px;
     text-align: center;
@@ -128,4 +142,33 @@ footer{
     width: 100%;
     clear: both;
     opacity: 0.4;
+}
+
+#filter:disabled {
+    cursor: not-allowed;
+    background-color: #c1c1c1;
+}
+
+.buttons-filter {
+    padding: 10px;
+    background-color: navy;
+    font-weight: 600;
+    color: white;
+    border-radius: 100px;
+    border: 0;
+    cursor: pointer;
+}
+
+.selects {
+    padding: 10px;
+    background-color: orange;
+    font-weight: 400;
+    color: white;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+.math {
+    border: 2px solid white;
 }

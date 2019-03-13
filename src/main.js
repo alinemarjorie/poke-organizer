@@ -10,18 +10,21 @@ function showPokemons() {
         <div class="each-pokemon">
         <img src="${pokemon.img}" class="pokemon-img" data-name="${pokemon.name}"/>
         <div class="text-name">
-            <h3 class="pokemon-name">${pokemon.name}</h3>
+            <span class="pokemon-name">${pokemon.name}</span>
         </div>
         </div>
    `).join('')}`
     getPokemonOnClick()
 }
 
-function showPercent() {
+function showPercent(type, weaknesses) {
     let number = pokemons.length / 151 * 100;
-    document.getElementById("math-pokemons").innerHTML =
-        `<div class="math"> Corresponde a ${Math.round(number)}% dos Pokémons.
-    </div>
+    document.getElementById("math-pokemons").innerHTML = `
+        <div class="math"> 
+            <p> Corresponde a <strong>${Math.round(number)}%</strong> dos Pokémons.</p>
+            <div> Tipo: <strong>${type}</strong><div>
+            <div> Fraqueza: <strong>${weaknesses}</strong></div>
+        </div>
 `
 }
 
@@ -44,14 +47,36 @@ function callFilter() {
             return (pokemon.weaknesses.includes(weaknesses));
         }
     })
-    showPercent();
+    showPercent(type, weaknesses);
     showPokemons();
     resetSelectElement();
+}
+
+selectTypeElement.addEventListener ("change", filterNull)
+selectWeaknessesElement.addEventListener ("change", filterNull)
+
+function filterNull() {
+    if (selectTypeElement.selectedIndex !== 0){
+        filterButtonElement.removeAttribute("disabled","");
+    }
+    else if (selectWeaknessesElement.selectedIndex !== 0){
+        filterButtonElement.removeAttribute("disabled","");
+    }    
+}
+
+const allButtonElement = document.getElementById("showAll");
+allButtonElement.addEventListener("click", showAll);
+
+function showAll() {
+    pokemons = POKEMON.pokemon;
+    showPokemons(pokemons);
+    document.getElementById("math-pokemons").style.display = "none";
 }
 
 function resetSelectElement() {
     selectTypeElement.selectedIndex = 0;
     selectWeaknessesElement.selectedIndex = 0;
+    filterButtonElement.setAttribute("disabled","");
 }
 
 const pokeSearchElement = document.getElementById("poke-search");
