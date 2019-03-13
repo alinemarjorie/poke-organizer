@@ -53,16 +53,15 @@ function callFilter() {
     resetSelectElement();
 }
 
-selectTypeElement.addEventListener ("change", filterNull)
-selectWeaknessesElement.addEventListener ("change", filterNull)
+selectTypeElement.addEventListener("change", filterNull)
+selectWeaknessesElement.addEventListener("change", filterNull)
 
 function filterNull() {
-    if (selectTypeElement.selectedIndex !== 0){
-        filterButtonElement.removeAttribute("disabled","");
+    if (selectTypeElement.selectedIndex !== 0) {
+        filterButtonElement.removeAttribute("disabled", "");
+    } else if (selectWeaknessesElement.selectedIndex !== 0) {
+        filterButtonElement.removeAttribute("disabled", "");
     }
-    else if (selectWeaknessesElement.selectedIndex !== 0){
-        filterButtonElement.removeAttribute("disabled","");
-    }    
 }
 
 const allButtonElement = document.getElementById("showAll");
@@ -77,7 +76,7 @@ function showAll() {
 function resetSelectElement() {
     selectTypeElement.selectedIndex = 0;
     selectWeaknessesElement.selectedIndex = 0;
-    filterButtonElement.setAttribute("disabled","");
+    filterButtonElement.setAttribute("disabled", "");
 }
 
 const pokeSearchElement = document.getElementById("poke-search");
@@ -109,18 +108,16 @@ const modal = document.getElementById("my-modal");
 function showFullPokemon(nome) {
     modal.style.display = "block";
     const onePokemon = POKEMON.pokemon.find(pokemon => pokemon.name === nome)
-    document.getElementById("contentModal").innerHTML = `
-    <div class="each-full-pokemon">
-    <img src="${onePokemon.img}" class="pokemon-img"/>
-    <div class="text-name">
-        <h3 class="pokemon-number">${onePokemon.num}</h3>
-        <h3 class="pokemon-name">${onePokemon.name}</h3>
-        <p><strong>Tipo:</strong> ${onePokemon.type}</p>
-        <p><strong>Fraquezas:</strong> ${onePokemon.weaknesses}</p>
-        <p><strong>Período:</strong> ${onePokemon.spawn_time}</p>     
-        <p><strong>Altura:</strong> ${onePokemon.height}</p>
-        <p><strong>Peso:</strong> ${onePokemon.weight}</p>        
-    </div>
+    document.getElementById("text-modal").innerHTML = `
+    <div>
+    <img src="${onePokemon.img}"/>
+    <h3>${onePokemon.num}</h3>
+    <h3 class="pokemon-name">${onePokemon.name}</h3>
+    <p><strong>Tipo:</strong> ${onePokemon.type}</p>
+    <p><strong>Fraquezas:</strong> ${onePokemon.weaknesses}</p>
+    <p><strong>Período:</strong> ${onePokemon.spawn_time}</p>     
+    <p><strong>Altura:</strong> ${onePokemon.height}</p>
+    <p><strong>Peso:</strong> ${onePokemon.weight}</p>
     </div>
     `
 }

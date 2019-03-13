@@ -17,7 +17,7 @@ header {
 }
 
 #title{
-    height: 110px;
+    max-height: 110px;
 }
 
 input{

@@ -1,87 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>PokeOrganizer</title>
-    <link rel="stylesheet" href="src/style.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <img id="title" src="src/medias/logo.png" alt="PokéOrganizer - O seu organizador de Pokémon">         
-      </header>
-      <div class="options">
-         <div class="details">
-          <input type="text" id="poke-search" placeholder="Digite o nome do Pokemon aqui ou utilize os filtros">
-        </div>
-      </div>
-      <div class="search">
-        <div>
-          <select id="select-type" class="selects">
-            <option value="" disabled selected>Escolha o tipo</option>
-            <option value="Water">Água</option>
-            <option value="Dragon">Dragão</option>
-            <option value="Electric">Elétrico</option>
-            <option value="Ghost">Fantasma</option>
-            <option value="Fire">Fogo</option>
-            <option value="Ice">Gelo</option>
-            <option value="Grass">Grama</option>
-            <option value="Bug">Inseto</option>
-            <option value="Fighting">Lutador</option>
-            <option value="Normal">Normal</option>
-            <option value="Rock">Pedra</option>
-            <option value="Psychic">Psíquico</option>
-            <option value="Ground">Terrestre</option>
-            <option value="Poison">Veneno</option>
-            <option value="Flying">Voador</option>
-          </select>
-        </div>
-          <div>
-          <select id="select-weaknesses" class="selects">
-            <option value="" disabled selected>Escolha a fraqueza</option>
-            <option value="Water">Água</option>
-            <option value="Dragon">Dragão</option>
-            <option value="Electric">Elétrico</option>
-            <option value="Ghost">Fantasma</option>
-            <option value="Fire">Fogo</option>
-            <option value="Ice">Gelo</option>
-            <option value="Grass">Grama</option>
-            <option value="Bug">Inseto</option>
-            <option value="Fighting">Lutador</option>
-            <option value="Steel">Metal</option>
-            <option value="Normal">Normal</option>
-            <option value="Rock">Pedra</option>
-            <option value="Psychic">Psíquico</option>
-            <option value="Ground">Terrestre</option>
-            <option value="Poison">Veneno</option>
-            <option value="Flying">Voador</option>
-            <option value="Dark">Noturno</option>
-            <option value="Fairy">Fada</option>
-          </select>
-        </div>
-          <button id="filter" class="buttons-filter" disabled>Filtrar!</button>
-          <button id="showAll" class="buttons-filter">Todos</button>
-      </div>
-      <div class="order">
-        <div class="alpha-start">
-          <button id="aToZ" class="order-button">Ordenar A-Z</button>
-        </div>
-        <div class="alpha-end">
-          <button id="zToA" class="order-button">Ordenar Z-A</button>      
-        </div>  
+
+<head>
+  <meta charset="utf-8">
+  <title>PokeOrganizer</title>
+  <link rel="stylesheet" href="src/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <img id="title" src="src/medias/logo.png" alt="PokéOrganizer - O seu organizador de Pokémon">
+    </header>
+    <div class="options">
+      <div class="details">
+        <input type="text" id="poke-search" placeholder="Digite o nome do Pokemon aqui ou utilize os filtros">
       </div>
     </div>
-    <section id="math-pokemons"></section>
-    <ul id="pokemons" class="show-pokemons"></ul>
-    <div id="my-modal" class="modal">
-      <div class="modal-content">
-        <span id="close">&times;</span>
-        <p id=contentModal></p>
+    <div class="search">
+      <div>
+        <select id="select-type" class="selects">
+          <option value="" disabled selected>Escolha o tipo</option>
+          <option value="Water">Água</option>
+          <option value="Dragon">Dragão</option>
+          <option value="Electric">Elétrico</option>
+          <option value="Ghost">Fantasma</option>
+          <option value="Fire">Fogo</option>
+          <option value="Ice">Gelo</option>
+          <option value="Grass">Grama</option>
+          <option value="Bug">Inseto</option>
+          <option value="Fighting">Lutador</option>
+          <option value="Normal">Normal</option>
+          <option value="Rock">Pedra</option>
+          <option value="Psychic">Psíquico</option>
+          <option value="Ground">Terrestre</option>
+          <option value="Poison">Veneno</option>
+          <option value="Flying">Voador</option>
+        </select>
+      </div>
+      <div>
+        <select id="select-weaknesses" class="selects">
+          <option value="" disabled selected>Escolha a fraqueza</option>
+          <option value="Water">Água</option>
+          <option value="Dragon">Dragão</option>
+          <option value="Electric">Elétrico</option>
+          <option value="Ghost">Fantasma</option>
+          <option value="Fire">Fogo</option>
+          <option value="Ice">Gelo</option>
+          <option value="Grass">Grama</option>
+          <option value="Bug">Inseto</option>
+          <option value="Fighting">Lutador</option>
+          <option value="Steel">Metal</option>
+          <option value="Normal">Normal</option>
+          <option value="Rock">Pedra</option>
+          <option value="Psychic">Psíquico</option>
+          <option value="Ground">Terrestre</option>
+          <option value="Poison">Veneno</option>
+          <option value="Flying">Voador</option>
+          <option value="Dark">Noturno</option>
+          <option value="Fairy">Fada</option>
+        </select>
+      </div>
+      <button id="filter" class="buttons-filter" disabled>Filtrar!</button>
+      <button id="showAll" class="buttons-filter">Todos</button>
+    </div>
+    <div class="order">
+      <div>
+        <button id="aToZ" class="order-button">Ordenar A-Z</button>
+      </div>
+      <div>
+        <button id="zToA" class="order-button">Ordenar Z-A</button>
       </div>
     </div>
-    <footer>Desenvolvido por Aline Marjorie e Jessica Veridiana</footer>
-    <script src="src/data/pokemon/pokemon.js"></script>
-    <script src="src/main.js"></script>
-  </body>
+  </div>
+  <section id="math-pokemons"></section>
+  <ul id="pokemons" class="show-pokemons"></ul>
+  <div id="my-modal" class="modal">
+    <div class="modal-content">
+      <span id="close">&times;</span>
+      <p id=text-modal></p>
+    </div>
+  </div>
+  <footer>Desenvolvido por Aline Marjorie e Jessica Veridiana</footer>
+  <script src="src/data/pokemon/pokemon.js"></script>
+  <script src="src/main.js"></script>
+</body>
+
 </html>
