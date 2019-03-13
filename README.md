@@ -1,4 +1,4 @@
-# Data Lovers
+# Data Lovers - PokéOrganizer
 
 ## Índice: 
 
@@ -8,7 +8,7 @@
 * [Teste](#testes-de-usabilidade)
 
 ## Produto: 
-Site para jogadores de Pokémon Go com as seguintes funcionalidades: 
+Dashboard para jogadores de Pokémon Go com as seguintes funcionalidades: 
 * Sistema de busca de Pokémon através do seu nome;
 * Seleção de Pokémon através do seu tipo;
 * Seleção de Pokémon através de sua fraqueza;
