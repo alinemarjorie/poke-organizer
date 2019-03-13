@@ -47,6 +47,7 @@ function callFilter() {
             return (pokemon.weaknesses.includes(weaknesses));
         }
     })
+    document.getElementById("math-pokemons").style.display = "block";
     showPercent(type, weaknesses);
     showPokemons();
     resetSelectElement();
