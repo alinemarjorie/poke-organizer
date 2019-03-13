@@ -1,6 +1,6 @@
 let pokemons = [];
 
-window.onload = function () {
+window.onload = () => {
     pokemons = POKEMON.pokemon;
     showPokemons();
 }
@@ -13,8 +13,8 @@ function showPokemons() {
             <span class="pokemon-name">${pokemon.name}</span>
         </div>
         </div>
-   `).join('')}`
-    getPokemonOnClick()
+   `).join('')}`;
+    getPokemonOnClick();
 }
 
 function showPercent(type, weaknesses) {
@@ -25,13 +25,13 @@ function showPercent(type, weaknesses) {
             <div> Tipo: <strong>${type}</strong><div>
             <div> Fraqueza: <strong>${weaknesses}</strong></div>
         </div>
-`
+    `;
 }
 
 const selectTypeElement = document.getElementById("select-type");
 const selectWeaknessesElement = document.getElementById("select-weaknesses");
-const filterButtonElement = document.getElementById("filter")
-filterButtonElement.addEventListener("click", callFilter)
+const filterButtonElement = document.getElementById("filter");
+filterButtonElement.addEventListener("click", callFilter);
 
 function callFilter() {
     let type = selectTypeElement.value;
@@ -53,8 +53,8 @@ function callFilter() {
     resetSelectElement();
 }
 
-selectTypeElement.addEventListener("change", filterNull)
-selectWeaknessesElement.addEventListener("change", filterNull)
+selectTypeElement.addEventListener("change", filterNull);
+selectWeaknessesElement.addEventListener("change", filterNull);
 
 function filterNull() {
     if (selectTypeElement.selectedIndex !== 0) {
@@ -96,10 +96,7 @@ function getPokemonOnClick() {
     let pokemonList = document.querySelectorAll('.pokemon-img');
 
     for (let pokemonImg of pokemonList) {
-        pokemonImg.addEventListener('click', function () {
-            const nome = pokemonImg.dataset.name;
-            showFullPokemon(nome);
-        })
+        pokemonImg.addEventListener('click', () => showFullPokemon(pokemonImg.dataset.name));
     }
 }
 
@@ -107,28 +104,37 @@ const modal = document.getElementById("my-modal");
 
 function showFullPokemon(nome) {
     modal.style.display = "block";
-    const onePokemon = POKEMON.pokemon.find(pokemon => pokemon.name === nome)
+    const onePokemon = POKEMON.pokemon.find(pokemon => pokemon.name === nome);
+
+    let nextEvolution = "";
+    if(onePokemon.next_evolution) {
+        nextEvolution = `<p><strong>Próxima evolução:</strong> ${onePokemon.next_evolution.map(elem => ` ${elem.name}`)} </p>`;
+    }
+    let prevEvolution = "";
+    if(onePokemon.prev_evolution) {
+        prevEvolution = `<p><strong>Evolução anterior:</strong> ${onePokemon.prev_evolution.map(elem => ` ${elem.name}`)} </p>`;
+    }
     document.getElementById("text-modal").innerHTML = `
-    <div>
-    <img src="${onePokemon.img}"/>
-    <h3>${onePokemon.num}</h3>
-    <h3 class="pokemon-name">${onePokemon.name}</h3>
-    <p><strong>Tipo:</strong> ${onePokemon.type}</p>
-    <p><strong>Fraquezas:</strong> ${onePokemon.weaknesses}</p>
-    <p><strong>Período:</strong> ${onePokemon.spawn_time}</p>     
-    <p><strong>Altura:</strong> ${onePokemon.height}</p>
-    <p><strong>Peso:</strong> ${onePokemon.weight}</p>
-    </div>
-    `
+        <div>
+            <img src="${onePokemon.img}"/>
+            <h3>${onePokemon.num}</h3>
+            <h3 class="pokemon-name">${onePokemon.name}</h3>
+            <p><strong>Tipo:</strong> ${onePokemon.type}</p>
+            <p><strong>Fraquezas:</strong> ${onePokemon.weaknesses}</p>
+            <p><strong>Período:</strong> ${onePokemon.spawn_time}</p>     
+            <p><strong>Altura:</strong> ${onePokemon.height}</p>
+            <p><strong>Peso:</strong> ${onePokemon.weight}</p>
+            ${prevEvolution}
+            ${nextEvolution}
+        </div>
+    `;
 }
 
 const close = document.getElementById("close");
 
-close.onclick = function () {
-    modal.style.display = "none";
-}
+close.onclick = () => modal.style.display = "none";
 
-window.onclick = function (event) {
+window.onclick = (event) => {
     if (event.target == modal) {
         modal.style.display = "none";
     }
