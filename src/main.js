@@ -69,7 +69,7 @@ allButtonElement.addEventListener("click", showAll);
 
 function showAll() {
     pokemons = POKEMON.pokemon;
-    showPokemons(pokemons);
+    showPokemons();
     document.getElementById("math-pokemons").style.display = "none";
 }
 
